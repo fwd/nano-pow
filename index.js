@@ -36,7 +36,7 @@ async function pow(req) {
 
 	var node = process.env.URL || process.env.WORKER || process.env.NODE
 
-	return (await server.http.post(node || 'http://[::1]:7076', _job)).data
+	return (await axios.post(node || 'http://[::1]:7076', _job)).data
 
 }
 
