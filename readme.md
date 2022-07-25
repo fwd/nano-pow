@@ -4,8 +4,6 @@
   </p>
 </a>
 
-<h1 align="center">Nano PoW Server</h1>
-
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
 ## 0. Pre-requisites
