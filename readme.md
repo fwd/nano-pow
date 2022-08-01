@@ -2,7 +2,7 @@
   <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="N2" width="450" />
 </p>
 
-<h2 align="center">Nano PoW Server</h2>
+<h2 align="center">Nano.to PoW Server</h2>
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
