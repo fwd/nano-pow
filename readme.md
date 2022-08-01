@@ -15,7 +15,7 @@ curl -L "https://github.com/fwd/nano-pow/raw/master/install.sh" | sh
 ## ❯ Usage
 
 ```javascript
-axios.post('http://localhost:PORT', { 
+axios.post('http://localhost:PORT?key=SECRET', { 
     hash: 'HASH'
 }).then((res) => {
     // console.log(res.data)
