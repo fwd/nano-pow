@@ -19,7 +19,7 @@ async function pow(req) {
 
 	var provided = req.headers.secret || req.query.secret || req.query.key ||  req.body.secret || req.body.key
 
-	if (password && provided !== password) return { error: "Unauthorized." }
+	if (password && (provided !== password)) return { error: "Unauthorized." }
 
 	var account = req.query.address || req.body.account
 	var frontier = req.query.frontier || req.body.frontier || req.query.hash || req.body.hash 
@@ -34,7 +34,7 @@ async function pow(req) {
 	_job.difficulty = process.env.DIFFICULTY || 'fffffff800000000'
 	_job.action = 'work_generate'
 
-	var node = process.env.URL || process.env.WORKER || process.env.NODE
+	var node = process.env.URL || process.env.WORKER || process.env.NODE || process.env.PATH
 
 	return (await axios.post(node || 'http://[::1]:7076', _job)).data
 
@@ -45,7 +45,7 @@ app.get('/work_generate', handle)
 app.post('/work_generate', handle)
 
 app.get('/', (req, res) => {
-	res.send(`Pow Server 🚀`)
+	res.send(`PoW Server 🚀 v0.1`)
 })
 
 console.log( process.env.BASE || "http://localhost:" + port )
