@@ -12,7 +12,25 @@
 curl -L "https://github.com/fwd/nano-pow/raw/master/install.sh" | sh
 ```
 
-## ❯ Sell PoW to Nano.to 
+## ❯ Usage
+
+```javascript
+axios.post('http://localhost:PORT', { 
+    hash: 'HASH'
+}).then((res) => {
+    // console.log(res.data)
+})
+```
+**Response (JSON):**
+```json
+{
+    "difficulty": "fffffffd316c7962",
+    "multiplier": "2.8500801896655417",
+    "work": "14b651936a358ddc"
+}
+```
+
+## ❯ Optional: Sell PoW to Nano.to 
 
 Email: support[at]nano.to for more information.
 
