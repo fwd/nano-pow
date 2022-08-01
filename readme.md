@@ -12,7 +12,7 @@
 curl -L "https://github.com/fwd/nano-pow/raw/master/install.sh" | sh
 ```
 
-## ❯ Monetize PoW 
+## ❯ Sell PoW to Nano.to 
 
 Email: support[at]nano.to for more information.
 
