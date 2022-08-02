@@ -30,6 +30,6 @@ SECRET=$(uuidgen | cut -f1 -d"-")
 EOT
 
 npm install -g pm2
-suod pm2 start index.js --name nano-pow
-suod pm2 startup
-suod m2 save
+sudo pm2 start index.js --name nano-pow
+sudo pm2 startup
+sudo m2 save
