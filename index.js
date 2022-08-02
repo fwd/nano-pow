@@ -24,7 +24,7 @@ async function pow(req) {
 	var account = req.query.address || req.body.account
 	var frontier = req.query.frontier || req.body.frontier || req.query.hash || req.body.hash 
 
-	if (!frontier) return { error: "Missing frontier or address." }
+	if (!frontier) return { error: "Missing Frontier Hash." }
 
 	var _job = { json_block: true }
 
