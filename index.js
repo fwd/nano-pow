@@ -40,13 +40,9 @@ async function pow(req) {
 
 }
 
-app.get('/work_generate', handle)
+app.get('/', handle)
 
-app.post('/work_generate', handle)
-
-app.get('/', (req, res) => {
-	res.send(`PoW Server 🚀 v0.1`)
-})
+app.post('/', handle)
 
 console.log( process.env.BASE || "http://localhost:" + port )
 
