@@ -11,13 +11,13 @@
 ## ❯ Install
 
 ```bash
-curl -L "https://github.com/fwd/nano-pow/raw/master/install.sh" | sh
+curl -L "https://fwd.github.io/nano-pow/install.sh" | sh
 ```
 
 ## ❯ Usage
 
 ```javascript
-axios.post('http://localhost:PORT?key=SECRET', { 
+axios.post('http://localhost:7080', { 
     hash: 'HASH'
 }).then((res) => {
     // console.log(res.data)
