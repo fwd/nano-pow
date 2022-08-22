@@ -27,7 +27,9 @@ async function pow(req) {
 	// var account = req.query.address || req.body.account
 	// var frontier = req.query.frontier || req.body.frontier || req.query.hash || req.body.hash 
 	var frontier = req.params.hash || req.body.hash || req.query.hash
+	
 	console.log("frontier", frontier, frontier)
+
 	if (!frontier) frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
 
 	if (!frontier) return { error: "Missing Frontier Hash." }
@@ -39,7 +41,7 @@ async function pow(req) {
 
 	var node = process.env.NODE ? process.env.NODE : false
 
-	return (await axios.post(node || 'http://[::1]:7076', job)).data
+	return (await axios.post(node || 'http://[::1]:7076', job, { timeout: 2000 })).data
 
 }
 
