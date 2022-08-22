@@ -26,7 +26,8 @@ async function pow(req) {
 
 	// var account = req.query.address || req.body.account
 	// var frontier = req.query.frontier || req.body.frontier || req.query.hash || req.body.hash 
-	var frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
+	var frontier = req.params.hash || req.body.hash || req.query.hash
+		frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
 		frontier = frontier.hash ? frontier.hash : frontier
 
 	console.log("frontier", frontier, frontier)
@@ -47,7 +48,7 @@ async function pow(req) {
 
 }
 
-app.get('/', handle)
+app.get('/:hash', handle)
 
 app.post('/', handle)
 
