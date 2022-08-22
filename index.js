@@ -28,16 +28,13 @@ async function pow(req) {
 	// var frontier = req.query.frontier || req.body.frontier || req.query.hash || req.body.hash 
 	var frontier = req.params.hash || req.body.hash || req.query.hash
 		frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
-		frontier = frontier.hash ? frontier.hash : frontier
+		// frontier = frontier.hash ? frontier.hash : frontier
 
 	console.log("frontier", frontier, frontier)
 
-	if (!frontier) return { error: "Missing Frontier Hash." }
+	if (!frontier || !frontier.hash) return { error: "Missing Frontier Hash." }
 
-	var job = { json_block: true }
-
-	if (frontier)  job.hash = frontier
-	// if (account)  job.account = account
+	var job = { json_block: true, hash: frontier.hash }
 
 	job.difficulty = process.env.DIFFICULTY || 'fffffff800000000'
 	job.action = 'work_generate'
