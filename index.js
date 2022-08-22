@@ -25,24 +25,24 @@ async function pow(req) {
 	if (password && (provided !== password)) return { error: "Unauthorized." }
 
 	// var account = req.query.address || req.body.account
-	var frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
 	// var frontier = req.query.frontier || req.body.frontier || req.query.hash || req.body.hash 
+	var frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
 
-	// console.log("frontier", frontier, )
+	console.log("frontier", frontier, frontier)
 
 	if (!frontier) return { error: "Missing Frontier Hash." }
 
-	var _job = { json_block: true }
+	var job = { json_block: true }
 
-	if (frontier)  _job.hash = frontier
-	// if (account)  _job.account = account
+	if (frontier)  job.hash = frontier
+	// if (account)  job.account = account
 
-	_job.difficulty = process.env.DIFFICULTY || 'fffffff800000000'
-	_job.action = 'work_generate'
+	job.difficulty = process.env.DIFFICULTY || 'fffffff800000000'
+	job.action = 'work_generate'
 
 	var node = process.env.URL || process.env.WORKER || process.env.NODE || process.env.PATH
 
-	return (await axios.post(node || 'http://[::1]:7076', _job)).data
+	return (await axios.post(node || 'http://[::1]:7076', job)).data
 
 }
 
