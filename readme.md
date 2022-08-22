@@ -4,7 +4,7 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-> RPC server for Nano PoW Worker (Rust). **MIT** License. In *alpha-0.5* stage. Which means it does not work at all, yet. Give it a star, and come back in a week or two. Early docs below.
+> RPC server for [Nano PoW Worker](https://github.com/nanocurrency/nano-pow-server). **MIT** License. In *alpha-0.5* stage. Which means it does not work at all, yet. Give it a star, and come back in a week or two. Early docs below.
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
