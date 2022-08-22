@@ -30,9 +30,9 @@ async function pow(req) {
 	console.log("frontier", frontier, frontier)
 	if (!frontier) frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
 
-	if (!frontier || !frontier.hash) return { error: "Missing Frontier Hash." }
+	if (!frontier) return { error: "Missing Frontier Hash." }
 
-	var job = { json_block: true, hash: frontier.hash }
+	var job = { json_block: true, hash: frontier.hash ? frontier.hash : frontier }
 
 	job.difficulty = process.env.DIFFICULTY || 'fffffff800000000'
 	job.action = 'work_generate'
