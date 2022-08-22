@@ -41,7 +41,7 @@ async function pow(req) {
 	job.difficulty = process.env.DIFFICULTY || 'fffffff800000000'
 	job.action = 'work_generate'
 
-	var node = process.env.URL || process.env.WORKER || process.env.NODE || process.env.PATH
+	var node = process.env.NODE ? process.env.NODE : false
 
 	return (await axios.post(node || 'http://[::1]:7076', job)).data
 
