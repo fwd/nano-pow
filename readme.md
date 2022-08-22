@@ -10,15 +10,16 @@
 
 ## ❯ Install
 
-```
-curl -g -d '{ "hash": "E4094A9ABA876DC3EE34042A06E8DF0501BCC578484030FBB11B98EDE3B81D2A" }' '[::1]:7080'
-```
 
 ```bash
 curl -L "https://fwd.github.io/nano-pow/install.sh" | sh
 ```
 
 ## ❯ Usage
+
+```bash
+curl -g -d '{ "hash": "E4094A9..." }' '[::1]:7080'
+```
 
 ```javascript
 axios.post('http://localhost:7080', { 
