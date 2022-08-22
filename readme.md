@@ -1,8 +1,10 @@
-<p align="center">
-  <img src="https://github.com/fwd/n2/raw/master/.github/banner.png" alt="N2" width="450" />
-</p>
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-<h2 align="center">Nano PoW Server</h2>
+<h1 align="center">Nano PoW Server</h1>
+
+![line](https://github.com/fwd/n2/raw/master/.github/line.png)
+
+> RPC server for Nano PoW Worker (Rust). **MIT** License. In *alpha-0.5* stage. Which means it does not work at all, yet. Give it a star, and come back in a week or two. Early docs below.
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
