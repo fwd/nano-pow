@@ -3,9 +3,12 @@ const cors = require('cors')
 const axios = require('axios')
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 
 app.use(cors())
-app.use(express.json())
+
+app.use(bodyParser());
+// app.use(express.urlencoded({ extended: true }));
 
 var port = process.env.PORT || 7080
 
@@ -21,15 +24,18 @@ async function pow(req) {
 
 	if (password && (provided !== password)) return { error: "Unauthorized." }
 
-	var account = req.query.address || req.body.account
-	var frontier = req.query.frontier || req.body.frontier || req.query.hash || req.body.hash 
+	// var account = req.query.address || req.body.account
+	var frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
+	// var frontier = req.query.frontier || req.body.frontier || req.query.hash || req.body.hash 
+
+	// console.log("frontier", frontier, )
 
 	if (!frontier) return { error: "Missing Frontier Hash." }
 
 	var _job = { json_block: true }
 
 	if (frontier)  _job.hash = frontier
-	if (account)  _job.account = account
+	// if (account)  _job.account = account
 
 	_job.difficulty = process.env.DIFFICULTY || 'fffffff800000000'
 	_job.action = 'work_generate'
