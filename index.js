@@ -27,9 +27,8 @@ async function pow(req) {
 	// var account = req.query.address || req.body.account
 	// var frontier = req.query.frontier || req.body.frontier || req.query.hash || req.body.hash 
 	var frontier = req.params.hash || req.body.hash || req.query.hash
-	if (!frontier) frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
-
 	console.log("frontier", frontier, frontier)
+	if (!frontier) frontier = req.body && req.body.hash ? req.body : JSON.parse(Object.keys(req.body)[0])
 
 	if (!frontier || !frontier.hash) return { error: "Missing Frontier Hash." }
 
