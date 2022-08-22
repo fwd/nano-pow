@@ -8,8 +8,6 @@
 
 ![line](https://github.com/fwd/n2/raw/master/.github/line.png)
 
-> This package is in development by [@nano2dev](https://twitter.com/nano2dev). It is recommended for use with bare metal GPU rigs. It can be used in the cloud as well. vCPU PoW is much slower.
-
 ## ❯ Install
 
 
